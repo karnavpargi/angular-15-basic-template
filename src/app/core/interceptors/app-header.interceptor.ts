@@ -8,7 +8,7 @@ export class AppHeaderInterCeptor implements HttpInterceptor{
 
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        let jsonRequest : HttpRequest<any> = req.clone({
+        const jsonRequest : HttpRequest<any> = req.clone({
             setHeaders: {'Content-Type': req.context.get<string>(CONTENT_TYPE) }
         })
         

@@ -1,24 +1,18 @@
 import {
-    HttpErrorResponse,
-    HttpEvent,
-    HttpHandler,
-    HttpInterceptor,
-    HttpRequest
+  HttpErrorResponse,
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {
-    Observable,
-    catchError,
-    throwError
-} from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 
 export const maxRetries = 2;
 export const delayMs = 2000;
 
 @Injectable()
 export class AppErrorInterCeptor implements HttpInterceptor {
-  constructor() {}
-
   intercept(
     request: HttpRequest<unknown>,
     next: HttpHandler
