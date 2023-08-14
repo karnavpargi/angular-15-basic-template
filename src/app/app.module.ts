@@ -15,7 +15,7 @@ import { WINDOW_PROVIDERS } from './core/providers/window.provider';
 
 @NgModule({
   declarations: [BreadcrumbComponent, AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), AppRoutingModule, HttpClientModule],
   providers: [
     CommonService,
     WINDOW_PROVIDERS,
