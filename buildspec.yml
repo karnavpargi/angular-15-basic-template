@@ -1,0 +1,20 @@
+version: 0.2
+phases:
+  install:
+    nodejs: 16
+  pre_build:
+    on-failure: ABORT
+    commands:
+      - npm install
+  build:
+    on-failure: ABORT
+    commands:
+      - npm run build:ssr
+  post_build:
+    on-failure: ABORT
+      
+artifacts:
+  files: 
+    - "**/*"
+  discard-paths: no
+  base-directory: dist
